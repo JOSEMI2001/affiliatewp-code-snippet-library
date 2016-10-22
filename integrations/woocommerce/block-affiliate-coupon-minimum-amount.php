@@ -13,7 +13,7 @@
  */
 function affwp_woocommerce_block_affiliate_coupon_based_on_subtotal( $return, $coupon ) {
 
-	// Return if Affiliate or WooCommerce is not installed
+    // Return if Affiliate or WooCommerce is not installed
     if ( ! ( function_exists( 'affiliate_wp' ) || class_exists( 'WooCommerce' ) ) ) {
         return $return;
     }
@@ -24,7 +24,7 @@ function affwp_woocommerce_block_affiliate_coupon_based_on_subtotal( $return, $c
     // Get the WooCommerce subtotal
     $subtotal = WC()->cart->subtotal;
 
-	// Check to see if the coupon is linked to an affiliate
+    // Check to see if the coupon is linked to an affiliate
     $is_tracked_coupon = get_post_meta( $coupon->id, 'affwp_discount_affiliate', true );
 
     // Block the coupon if it's linked to an affiliate but doesn't met the required subtotal amount
