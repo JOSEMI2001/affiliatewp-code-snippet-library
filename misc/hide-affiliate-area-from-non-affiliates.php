@@ -9,7 +9,11 @@
  */
 
 function affwp_custom_hide_affiliate_area_from_non_affiliates( $items, $menu, $args ) {
-
+    
+    if ( ! function_exists( 'affiliate_wp' ) ) {
+		return $items;
+	}
+    
     // grab the page ID of the affiliate area
     // Alternatively you can just set a page ID here
     // For example: $affiliate_area_page_id = 5;
