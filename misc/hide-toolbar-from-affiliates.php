@@ -4,7 +4,7 @@
  * Plugin URI: http://affiliatewp.com
  * Description: Hides the Admin Toolbar from logged-in affiliates on the front end.
  * Author: Drew Jaynes, DrewAPicture
- * Author URI: http://affiliatewp.com
+ * Author URI: https://affiliatewp.com
  * Version: 1.0
  */
 
