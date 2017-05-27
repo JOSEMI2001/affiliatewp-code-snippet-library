@@ -24,4 +24,4 @@ add_filter( 'affwp_affiliate_area_tabs', function( $tabs ) {
 	$tabs = array_values( $tabs );
 
 	return $tabs;
-} );
+}, 100 );
