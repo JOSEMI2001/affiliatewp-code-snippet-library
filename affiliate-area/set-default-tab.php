@@ -10,7 +10,7 @@
 
 add_filter( 'affwp_affiliate_area_tabs', function( $tabs ) {
 	// Set your tab slug.
-	$new_default_tab = 'welcome'
+	$new_default_tab = 'welcome';
 
 	// Remove the tab from wherever in the list it falls.
 	if ( $key = array_search( $new_default_tab, $tabs ) ) {
