@@ -8,8 +8,7 @@
  * Version: 1.0
  */ 
 
-function affwp_set_registration_alert_email( $email ) {
+function affwp_custom_set_registration_admin_email( $email ) {
     return 'contact@site.com'; // This will cause all new registration email notifications to be sent to contact@site.com
 }
-
-add_filter( 'affwp_registration_admin_email', 'affwp_set_registration_alert_email' );
+add_filter( 'affwp_registration_admin_email', 'affwp_custom_set_registration_admin_email' );
