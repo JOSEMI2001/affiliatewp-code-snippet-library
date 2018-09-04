@@ -78,7 +78,9 @@ function affwp_custom_move_login_above_register( $atts, $content = null ) {
 
 }
 
-$affiliate_wp = function_exists( 'affiliate_wp' ) ? affiliate_wp() : '';
-
-remove_shortcode( 'affiliate_area', array( $affiliate_wp, 'affiliate_area' ) );
-add_shortcode( 'affiliate_area', 'affwp_custom_move_login_above_register', 10, 2 );
+function affwp_custom_move_login_above_register_load() {
+	$affiliate_wp = function_exists( 'affiliate_wp' ) ? affiliate_wp() : '';
+	remove_shortcode( 'affiliate_area', array( $affiliate_wp, 'affiliate_area' ) );
+	add_shortcode( 'affiliate_area', 'affwp_custom_move_login_above_register', 10, 2 );
+}
+add_action( 'template_redirect', 'affwp_custom_move_login_above_register_load' );
