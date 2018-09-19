@@ -12,7 +12,7 @@ function affwp_disable_automatic_customer_linking_to_affiliate( $check, $object_
 
 	if ( did_action( 'affwp_post_insert_customer' ) ) {
 
-		if ( 'affiliate_id' == $meta_key ) {
+		if ( ! is_admin() && 'affiliate_id' == $meta_key ) {
 
 			return true;
 
