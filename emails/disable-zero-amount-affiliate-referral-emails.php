@@ -8,7 +8,7 @@
  * Version: 1.0
  */
 
-function affwp_check_for_zero_amount_referral_disable_email( $affiliate_id, $referral) {
+function affwp_check_for_zero_amount_referral_disable_email( $return, $referral) {
 
 	//check to see if AffiliateWP is active
 	if ( ! function_exists( 'affiliate_wp' ) ) {
@@ -18,13 +18,15 @@ function affwp_check_for_zero_amount_referral_disable_email( $affiliate_id, $ref
 	// get the referral amount from the referral object passed in
 	$referral_amount = $referral->amount;
 
-	//check of the referral amount is zero, will be formatted to a string at this point
+	//check of the referral amount is zero, will be formatted to a string
 	if ( $referral_amount == '0.00' ) {
 
 		// Disables the "New Referral Email" sent to the affiliate if the amount of the referral is zero
-		remove_action( 'affwp_referral_accepted', 'affwp_notify_on_new_referral', 10, 2 );
+		$return = false;
 
 	}
+
+	return $return;
 }
 
-add_action('affwp_referral_accepted', 'affwp_check_for_zero_amount_referral_disable_email', 9, 2);
+add_filter( 'affwp_notify_on_new_referral', 'affwp_check_for_zero_amount_referral_disable_email', 10, 2);
