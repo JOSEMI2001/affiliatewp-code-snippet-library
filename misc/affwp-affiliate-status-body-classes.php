@@ -9,6 +9,12 @@
  */
 
 add_filter( 'body_class', function( $body_classes ) {
+
+	// Make sure AffiliateWP is installed.
+	if ( ! function_exists( 'affiliate_wp' ) ) {
+		return $body_classes;
+	}
+
 	$affiliate = affwp_get_affiliate();
 
 	if ( false !== $affiliate ) {
