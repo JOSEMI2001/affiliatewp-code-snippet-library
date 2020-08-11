@@ -9,7 +9,7 @@
  */
  
 function affwp_custom_add_currency( $currencies ) {
-	$currencies['KRW'] = 'South Korean Won (KRW)';
+	$currencies['KRW'] = 'Guatemala GTQ. (Q.)';
 	return $currencies;
 }
 add_filter( 'affwp_currencies', 'affwp_custom_add_currency' );
